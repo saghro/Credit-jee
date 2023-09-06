@@ -4,17 +4,41 @@
  */
 package serie4.gestionparck;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author PC
  */
 public class Fenetre extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Fenetre
-     */
+       
+       ArrayList<Vehicule> vehicule;
+       DefaultListModel modelList ;
+       File fichier;
+       FileWriter fw;
+       PrintWriter pw;
+   
     public Fenetre() {
         initComponents();
+        vehicule = new ArrayList<>();
+        modelList = new DefaultListModel();
+        
+           try {
+               fichier = new File("fichier.veh");
+               fw = new FileWriter(fichier);
+               pw = new PrintWriter(fw);
+           } catch (IOException ex) {
+              ex.printStackTrace();
+           }
+        
     }
 
     /**
@@ -54,6 +78,11 @@ public class Fenetre extends javax.swing.JFrame {
 
         btnFermer.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnFermer.setText("Fermer");
+        btnFermer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFermerActionPerformed(evt);
+            }
+        });
 
         btnEnregister.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnEnregister.setText("Enregister");
@@ -110,6 +139,13 @@ public class Fenetre extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEnregisterActionPerformed
 
+    private void btnFermerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFermerActionPerformed
+         int choix = JOptionPane.showConfirmDialog(this,"Etes-Vous sur de vouloir sortir ?", "Confirmation"
+                 , JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+         if(choix == 0)
+             System.exit(0);
+    }//GEN-LAST:event_btnFermerActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -140,7 +176,10 @@ public class Fenetre extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Fenetre().setVisible(true);
+               Fenetre f = new Fenetre();
+               f.setVisible(true);
+               f.setTitle("la Gestion d'un Parcking");
+               f.setLocationRelativeTo(null);
             }
         });
     }
