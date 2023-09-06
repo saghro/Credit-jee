@@ -64,6 +64,11 @@ public class Fenetre extends javax.swing.JFrame {
 
         btnAjouter.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnAjouter.setText("Ajouter");
+        btnAjouter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAjouterActionPerformed(evt);
+            }
+        });
 
         btnSupprimer.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnSupprimer.setText("Supprimer");
@@ -145,6 +150,20 @@ public class Fenetre extends javax.swing.JFrame {
          if(choix == 0)
              System.exit(0);
     }//GEN-LAST:event_btnFermerActionPerformed
+
+    private void btnAjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjouterActionPerformed
+        String marque ,model,immatriculation ,type;
+        marque = JOptionPane.showInputDialog(this, "Entrez la marque du vehicule"
+                ,"Marque",JOptionPane.PLAIN_MESSAGE);
+        model = JOptionPane.showInputDialog(this, "Entrez le model du vehicule"
+                ,"Model",JOptionPane.PLAIN_MESSAGE);
+        immatriculation = JOptionPane.showInputDialog(this, "Entrez l'immtriculation du vehicule"
+                ,"Immatriculation",JOptionPane.PLAIN_MESSAGE);
+        type = JOptionPane.showInputDialog(this, "Entrez type du vehicule (Voiture /Camion / Moto)"
+                ,"Type",JOptionPane.PLAIN_MESSAGE);                
+
+
+    }//GEN-LAST:event_btnAjouterActionPerformed
 
     /**
      * @param args the command line arguments
