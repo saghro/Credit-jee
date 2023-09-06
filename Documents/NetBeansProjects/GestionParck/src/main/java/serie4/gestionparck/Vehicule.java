@@ -1,13 +1,39 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package serie4.gestionparck;
 
-/**
- *
- * @author PC
- */
-public class Vehicule {
+public abstract class Vehicule {
+    protected String marque;
+    protected String model;
+    protected String immatriculation ;
+
+    public Vehicule(String marque, String model, String immatriculation) {
+        this.marque = marque;
+        this.model = model;
+        this.immatriculation = immatriculation;
+    }
+    
+    public String getMarque() {
+        return marque;
+    }
+
+    public void setMarque(String marque) {
+        this.marque = marque;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getImmatriculation() {
+        return immatriculation;
+    }
+
+    public void setImmatriculation(String immatriculation) {
+        this.immatriculation = immatriculation;
+    }
     
 }
