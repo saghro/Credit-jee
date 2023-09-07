@@ -141,11 +141,7 @@ public class Fenetre extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSupprimerActionPerformed
 
     private void btnEnregisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnregisterActionPerformed
-        // TODO add your handling code here:
-        int choix = JOptionPane.showConfirmDialog(this,"Etes-Vous sur de vouloir sortir ?", "Confirmation"
-                 , JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
-         if(choix == 0)
-             System.exit(0);
+       
     }//GEN-LAST:event_btnEnregisterActionPerformed
 
     private void btnFermerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFermerActionPerformed
