@@ -165,6 +165,9 @@ public class Fenetre extends javax.swing.JFrame {
         if(type.equalsIgnoreCase("Voiture"))
             nombrePortes = Integer.parseInt(JOptionPane.showInputDialog(this, "Entrez nombre du ports "
                 ,"Marque",JOptionPane.PLAIN_MESSAGE));
+        else if(type.equalsIgnoreCase("Moto"))
+            nombrePortes = Integer.parseInt(JOptionPane.showInputDialog(this, "entre la vitesse maximal "
+                ,"Marque",JOptionPane.PLAIN_MESSAGE));
 
 
     }//GEN-LAST:event_btnAjouterActionPerformed
