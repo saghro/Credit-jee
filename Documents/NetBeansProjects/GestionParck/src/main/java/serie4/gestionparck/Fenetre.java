@@ -153,6 +153,7 @@ public class Fenetre extends javax.swing.JFrame {
 
     private void btnAjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjouterActionPerformed
         String marque ,model,immatriculation ,type;
+        int nombrePortes;
         marque = JOptionPane.showInputDialog(this, "Entrez la marque du vehicule"
                 ,"Marque",JOptionPane.PLAIN_MESSAGE);
         model = JOptionPane.showInputDialog(this, "Entrez le model du vehicule"
@@ -160,7 +161,10 @@ public class Fenetre extends javax.swing.JFrame {
         immatriculation = JOptionPane.showInputDialog(this, "Entrez l'immtriculation du vehicule"
                 ,"Immatriculation",JOptionPane.PLAIN_MESSAGE);
         type = JOptionPane.showInputDialog(this, "Entrez type du vehicule (Voiture /Camion / Moto)"
-                ,"Type",JOptionPane.PLAIN_MESSAGE);                
+                ,"Type",JOptionPane.PLAIN_MESSAGE);    
+        if(type.equalsIgnoreCase("Voiture"))
+            nombrePortes = Integer.parseInt(JOptionPane.showInputDialog(this, "Entrez nombre du ports "
+                ,"Marque",JOptionPane.PLAIN_MESSAGE));
 
 
     }//GEN-LAST:event_btnAjouterActionPerformed
