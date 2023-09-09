@@ -154,23 +154,39 @@ public class Fenetre extends javax.swing.JFrame {
     private void btnAjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjouterActionPerformed
         String marque ,model,immatriculation ,type;
         int nombrePortes,vitesseMax,choix= 0;
-        boolean remoque; 
-        marque = JOptionPane.showInputDialog(this, "Entrez la marque du vehicule"
+        boolean remoque;
+         type = JOptionPane.showInputDialog(this, "Entrez type du vehicule (Voiture /Camion / Moto)"
+                ,"Type",JOptionPane.PLAIN_MESSAGE); 
+        
+          
+        if(type.equalsIgnoreCase("Voiture")){
+            marque = JOptionPane.showInputDialog(this, "Entrez la marque du vehicule"
                 ,"Marque",JOptionPane.PLAIN_MESSAGE);
         model = JOptionPane.showInputDialog(this, "Entrez le model du vehicule"
                 ,"Model",JOptionPane.PLAIN_MESSAGE);
         immatriculation = JOptionPane.showInputDialog(this, "Entrez l'immtriculation du vehicule"
                 ,"Immatriculation",JOptionPane.PLAIN_MESSAGE);
-        type = JOptionPane.showInputDialog(this, "Entrez type du vehicule (Voiture /Camion / Moto)"
-                ,"Type",JOptionPane.PLAIN_MESSAGE);    
-        if(type.equalsIgnoreCase("Voiture"))
-            nombrePortes = Integer.parseInt(JOptionPane.showInputDialog(this, "Entrez nombre du ports "
+        nombrePortes = Integer.parseInt(JOptionPane.showInputDialog(this, "Entrez nombre du ports "
                 ,"Nombre de Ports",JOptionPane.PLAIN_MESSAGE));
-        else if(type.equalsIgnoreCase("Moto"))
+        }
+            
+        else if(type.equalsIgnoreCase("Moto")){
+             marque = JOptionPane.showInputDialog(this, "Entrez la marque du vehicule"
+                ,"Marque",JOptionPane.PLAIN_MESSAGE);
+             model = JOptionPane.showInputDialog(this, "Entrez le model du vehicule"
+                ,"Model",JOptionPane.PLAIN_MESSAGE);
+             immatriculation = JOptionPane.showInputDialog(this, "Entrez l'immtriculation du vehicule"
+                ,"Immatriculation",JOptionPane.PLAIN_MESSAGE);
             vitesseMax = Integer.parseInt(JOptionPane.showInputDialog(this, "entre la vitesse maximal "
                 ,"Vitesse maximal",JOptionPane.PLAIN_MESSAGE));
-
+        }
         else if(type.equalsIgnoreCase("Camoin")){
+             marque = JOptionPane.showInputDialog(this, "Entrez la marque du vehicule"
+                ,"Marque",JOptionPane.PLAIN_MESSAGE);
+             model = JOptionPane.showInputDialog(this, "Entrez le model du vehicule"
+                ,"Model",JOptionPane.PLAIN_MESSAGE);
+             immatriculation = JOptionPane.showInputDialog(this, "Entrez l'immtriculation du vehicule"
+                ,"Immatriculation",JOptionPane.PLAIN_MESSAGE);
              choix = JOptionPane.showConfirmDialog(this, "le camion a-t-il un remoque","remoque"
                     ,JOptionPane.YES_NO_OPTION);
            if(choix == 0)remoque = true;
