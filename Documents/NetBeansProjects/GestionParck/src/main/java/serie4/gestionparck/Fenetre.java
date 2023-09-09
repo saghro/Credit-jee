@@ -153,7 +153,8 @@ public class Fenetre extends javax.swing.JFrame {
 
     private void btnAjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjouterActionPerformed
         String marque ,model,immatriculation ,type;
-        int nombrePortes;
+        int nombrePortes,vitesseMax,choix= 0;
+        boolean remoque; 
         marque = JOptionPane.showInputDialog(this, "Entrez la marque du vehicule"
                 ,"Marque",JOptionPane.PLAIN_MESSAGE);
         model = JOptionPane.showInputDialog(this, "Entrez le model du vehicule"
@@ -164,12 +165,23 @@ public class Fenetre extends javax.swing.JFrame {
                 ,"Type",JOptionPane.PLAIN_MESSAGE);    
         if(type.equalsIgnoreCase("Voiture"))
             nombrePortes = Integer.parseInt(JOptionPane.showInputDialog(this, "Entrez nombre du ports "
-                ,"Marque",JOptionPane.PLAIN_MESSAGE));
+                ,"Nombre de Ports",JOptionPane.PLAIN_MESSAGE));
         else if(type.equalsIgnoreCase("Moto"))
-            nombrePortes = Integer.parseInt(JOptionPane.showInputDialog(this, "entre la vitesse maximal "
-                ,"Marque",JOptionPane.PLAIN_MESSAGE));
+            vitesseMax = Integer.parseInt(JOptionPane.showInputDialog(this, "entre la vitesse maximal "
+                ,"Vitesse maximal",JOptionPane.PLAIN_MESSAGE));
 
-
+        else if(type.equalsIgnoreCase("Camoin")){
+             choix = JOptionPane.showConfirmDialog(this, "le camion a-t-il un remoque","remoque"
+                    ,JOptionPane.YES_NO_OPTION);
+           if(choix == 0)remoque = true;
+           else remoque = false;
+        }
+        else {
+            JOptionPane.showConfirmDialog(this,"votree choix inncorrect","choix incorrect "
+                    ,JOptionPane.OK_OPTION);
+        }
+           
+                   
     }//GEN-LAST:event_btnAjouterActionPerformed
 
     /**
