@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
  */
 public class Fenetre extends javax.swing.JFrame {
        
-       ArrayList<Vehicule> vehicule;
+       ArrayList<Vehicule> vehicules;
        DefaultListModel modelList ;
        File fichier;
        FileWriter fw;
@@ -28,7 +28,7 @@ public class Fenetre extends javax.swing.JFrame {
    
     public Fenetre() {
         initComponents();
-        vehicule = new ArrayList<>();
+        vehicules = new ArrayList<>();
         modelList = new DefaultListModel();
         
            try {
@@ -152,6 +152,7 @@ public class Fenetre extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFermerActionPerformed
 
     private void btnAjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjouterActionPerformed
+        Vehicule vehicule = null;
         String marque ,model,immatriculation ,type;
         int nombrePortes,vitesseMax,choix= 0;
         boolean remoque;
@@ -168,6 +169,8 @@ public class Fenetre extends javax.swing.JFrame {
                 ,"Immatriculation",JOptionPane.PLAIN_MESSAGE);
         nombrePortes = Integer.parseInt(JOptionPane.showInputDialog(this, "Entrez nombre du ports "
                 ,"Nombre de Ports",JOptionPane.PLAIN_MESSAGE));
+        vehicule = new Voiture(marque, model, immatriculation, nombrePortes);
+        vehicules.add(vehicule);
         }
             
         else if(type.equalsIgnoreCase("Moto")){
@@ -179,6 +182,8 @@ public class Fenetre extends javax.swing.JFrame {
                 ,"Immatriculation",JOptionPane.PLAIN_MESSAGE);
             vitesseMax = Integer.parseInt(JOptionPane.showInputDialog(this, "entre la vitesse maximal "
                 ,"Vitesse maximal",JOptionPane.PLAIN_MESSAGE));
+            vehicule = new Moto(marque, model, immatriculation, vitesseMax);
+            vehicules.add(vehicule);
         }
         else if(type.equalsIgnoreCase("Camoin")){
              marque = JOptionPane.showInputDialog(this, "Entrez la marque du vehicule"
@@ -191,6 +196,8 @@ public class Fenetre extends javax.swing.JFrame {
                     ,JOptionPane.YES_NO_OPTION);
            if(choix == 0)remoque = true;
            else remoque = false;
+           vehicule = new Camion(marque, model, immatriculation, remoque);
+           vehicules.add(vehicule);
         }
         else {
             JOptionPane.showConfirmDialog(this,"votree choix inncorrect","choix incorrect "

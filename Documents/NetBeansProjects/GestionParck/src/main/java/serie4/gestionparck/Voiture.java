@@ -16,5 +16,10 @@ public class Voiture extends Vehicule{
     public void setNombrePortes(int nombrePortes) {
         this.nombrePortes = nombrePortes;
     }
+
+    @Override
+    public String toString() {
+        String affichage = " La voiture " +getMarque() " " +getModel() 
+    }
     
 }
