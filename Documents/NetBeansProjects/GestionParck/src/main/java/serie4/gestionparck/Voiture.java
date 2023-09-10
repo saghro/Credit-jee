@@ -19,7 +19,9 @@ public class Voiture extends Vehicule{
 
     @Override
     public String toString() {
-        String affichage = " La voiture " +getMarque() " " +getModel() 
+        String affichage = " La voiture " +getMarque() +" " +getModel() +  "d'immatriculation " + getImmatriculation()+
+                "contient "+ getNombrePortes();
+        return affichage;
     }
     
 }

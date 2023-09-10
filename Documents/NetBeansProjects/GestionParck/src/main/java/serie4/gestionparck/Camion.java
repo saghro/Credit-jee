@@ -16,5 +16,15 @@ public class Camion extends Vehicule {
     public void setRemoque(boolean remoque) {
         this.remoque = remoque;
     }
-    
+       @Override
+    public String toString() { 
+        String affichage ;
+        if(isRemoque())
+           affichage = " La camoin " +getMarque() +" " +getModel() +  "d'immatriculation " + getImmatriculation()
+                +"contient un remoque";
+        else
+            affichage = " La camoin " +getMarque() +" " +getModel() +  "d'immatriculation " + getImmatriculation()+
+                " ne contient pas un remoque ";
+        return affichage;
+} 
 }

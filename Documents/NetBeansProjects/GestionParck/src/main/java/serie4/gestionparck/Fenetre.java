@@ -171,6 +171,9 @@ public class Fenetre extends javax.swing.JFrame {
                 ,"Nombre de Ports",JOptionPane.PLAIN_MESSAGE));
         vehicule = new Voiture(marque, model, immatriculation, nombrePortes);
         vehicules.add(vehicule);
+        modelList.add(0, vehicule);
+        
+        
         }
             
         else if(type.equalsIgnoreCase("Moto")){
@@ -184,6 +187,7 @@ public class Fenetre extends javax.swing.JFrame {
                 ,"Vitesse maximal",JOptionPane.PLAIN_MESSAGE));
             vehicule = new Moto(marque, model, immatriculation, vitesseMax);
             vehicules.add(vehicule);
+            modelList.add(0, vehicule);
         }
         else if(type.equalsIgnoreCase("Camoin")){
              marque = JOptionPane.showInputDialog(this, "Entrez la marque du vehicule"
@@ -198,6 +202,7 @@ public class Fenetre extends javax.swing.JFrame {
            else remoque = false;
            vehicule = new Camion(marque, model, immatriculation, remoque);
            vehicules.add(vehicule);
+           modelList.add(0, vehicule);
         }
         else {
             JOptionPane.showConfirmDialog(this,"votree choix inncorrect","choix incorrect "

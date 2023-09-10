@@ -17,5 +17,10 @@ public class Moto extends Vehicule{
     public void setVitesseMax(int vitesseMax) {
         this.vitesseMax = vitesseMax;
     }
-    
+       @Override
+    public String toString() {
+        String affichage = " Le Moto " +getMarque() +" " +getModel() +  "d'immatriculation " + getImmatriculation()+
+                " a une vetisse maximale "+getVitesseMax();
+        return affichage;
+}
 }
