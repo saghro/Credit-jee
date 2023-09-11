@@ -172,7 +172,7 @@ public class Fenetre extends javax.swing.JFrame {
         vehicule = new Voiture(marque, model, immatriculation, nombrePortes);
         vehicules.add(vehicule);
         modelList.add(0, vehicule);
-        
+        jList1.setModel(modelList);
         
         }
             
