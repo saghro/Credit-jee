@@ -141,7 +141,10 @@ public class Fenetre extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSupprimerActionPerformed
 
     private void btnEnregisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnregisterActionPerformed
-       
+       for( Vehicule v:vehicules){
+           pw.println(v);
+       }
+       pw.close();
     }//GEN-LAST:event_btnEnregisterActionPerformed
 
     private void btnFermerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFermerActionPerformed
