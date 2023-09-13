@@ -138,6 +138,14 @@ public class Fenetre extends javax.swing.JFrame {
 
     private void btnSupprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupprimerActionPerformed
         // TODO add your handling code here:
+        if(jList1.isSelectionEmpty())
+            JOptionPane.showConfirmDialog(this,"selectionner un vehecule a supprimer","par de selection"
+                    ,JOptionPane.ERROR_MESSAGE);
+        else{
+            int indice  = jList1.getSelectedIndex();
+            modelList.remove(indice);
+            vehicules.remove(indice);
+        }
     }//GEN-LAST:event_btnSupprimerActionPerformed
 
     private void btnEnregisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnregisterActionPerformed
@@ -161,7 +169,9 @@ public class Fenetre extends javax.swing.JFrame {
         boolean remoque;
          type = JOptionPane.showInputDialog(this, "Entrez type du vehicule (Voiture /Camion / Moto)"
                 ,"Type",JOptionPane.PLAIN_MESSAGE); 
-        
+        if(type==null){
+            
+        }
           
         if(type.equalsIgnoreCase("Voiture")){
             marque = JOptionPane.showInputDialog(this, "Entrez la marque du vehicule"
