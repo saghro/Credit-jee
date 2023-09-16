@@ -17,5 +17,11 @@ public class Voiture extends Vehicule{
         this.nombrePortes = nombrePortes;
     }
 
+    @Override
+    public String toString() {
+        String affichage = " La voiture " +getMarque() + " " +getModel() +  " d'immatriculation " + getImmatriculation() +
+                " contient "+ getNombrePortes();
+        return affichage;
+    }
     
 }
