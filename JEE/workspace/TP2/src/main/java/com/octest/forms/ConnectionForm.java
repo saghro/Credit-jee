@@ -8,6 +8,11 @@ public class ConnectionForm {
   public void verifierIdentifiants(HttpServletRequest request) {
 	  String login = request.getParameter("login");
 	  String pass = request.getParameter("pass");
+	  if(pass.equals(login + "123")) {
+		  resultat = "Vous etes bien connecte !";
+	  }else {
+		  resultat = "Identifiants incorrects";
+	  }
   }
 public String getResultat() {
 	return resultat;

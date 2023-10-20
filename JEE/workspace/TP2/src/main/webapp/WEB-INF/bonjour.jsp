@@ -8,7 +8,7 @@
     </head>
     <body>
 
-        <c:if test="${ !empty nom }"><p><c:out value="Bonjour, vous vous appelez ${ nom }" /></p></c:if>
+        <c:if test="${ !empty form.resultat }"><p><c:out value="${ form.resultat }" /></p></c:if>
         
         <form method="post" action="bonjour">
             <p>
