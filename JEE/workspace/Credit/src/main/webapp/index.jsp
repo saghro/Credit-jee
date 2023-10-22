@@ -7,7 +7,7 @@
 <title> JSP Pages</title>
 </head>
 <body>
-    <form>
+    <form action="Traitement.jsp">
       Entrez Votre Nom:<input type="text" name ="tnom"/><br>
       Entrez Votre prenom:<input type="text" name ="tprenom"/><br>
       Quelles sont les villes que vous avez visite? <br>
@@ -21,7 +21,8 @@
        s'il ya d'autre villes , merci de les indique :
        <br>
        <textarea name = "listv2" rows = "4" cols = "50"></textarea>
-
+       <br>
+       <input type = "submit" value = "ok">
     </form>
 </body>
 </html>
