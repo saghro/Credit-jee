@@ -7,12 +7,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import com.octest.forms.ConnectionForm;
-
+/**
+ * Servlet implementation class Test
+ */
 @WebServlet("/Test")
 public class Test extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    
        
     public Test() {
         super();
@@ -23,11 +26,14 @@ public class Test extends HttpServlet {
         this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       ConnectionForm form = new ConnectionForm();
-       form.verifierIdentifiants(request);
+    public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+        String nom = request.getParameter("nom");
+        String prenom = request.getParameter("prenom");
         
-        request.setAttribute("form",form);
+        HttpSession session = request.getSession();
+
+        session.setAttribute("nom", nom);
+        session.setAttribute("prenom", prenom);
         
         this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
     }

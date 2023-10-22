@@ -2,26 +2,26 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Test</title>
-    </head>
-    <body>
-
-        <c:if test="${ !empty form.resultat }"><p><c:out value="${ form.resultat }" /></p></c:if>
+<head>
+<meta charset="utf-8" />
+<title>Test</title>
+</head>
+<body>
+    <c:if test="${ !empty sessionScope.prenom && !empty sessionScope.nom }">
+        <p>Vous êtes ${ sessionScope.prenom } ${ sessionScope.nom } !</p>
+    </c:if>
+    <form method="post" action="bonjour">
+        <p>
+            <label for="nom">Nom : </label>
+            <input type="text" name="nom" id="nom" />
+        </p>
+        <p>
+            <label for="prenom">Prénom : </label>
+            <input type="text" name="prenom" id="prenom" />
+        </p>
         
-        <form method="post" action="bonjour">
-            <p>
-                 <label for="login">Nom : </label>
-                 <input type="text" name="login" id="login" />
-            </p>
-            <p>
-                 <label for="pass">Mot de Passe : </label>
-                 <input type="password" name="pass" id="pass" />
-            </p>
-             
-            <input type="submit" />
-        </form>
-        
-    </body>
+        <input type="submit" />
+    </form>
+    
+</body>
 </html>
