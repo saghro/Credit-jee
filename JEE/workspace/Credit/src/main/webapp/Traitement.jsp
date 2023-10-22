@@ -24,5 +24,8 @@
      <c:forEach var ="v1" items="${paramValues.listv }">
            <c:out value="${v1}"/>
      </c:forEach>  
+     <c:forTokens var="v2" items="${param.listv2 }" delims=",">
+          <c:out value="${v2}"/>
+     </c:forTokens>
 </body>
 </html>
